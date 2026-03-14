@@ -7,40 +7,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root { 
-            --brand-blue: #002244; /* ロゴに合わせた濃紺 */
+            --brand-blue: #002244; 
             --brand-orange: #f59e0b; 
         }
         body { font-family: "Hiragino Sans", "Meiryo", sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* ヒーローアニメーションの設定 */
+        /* ヒーローアニメーション */
         .watercolor-base {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            /* 1秒待機して3秒かけて変化 */
+            position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
             animation: watercolorFade 3s ease-in-out 1s forwards;
         }
-
         @keyframes watercolorFade {
             0% { opacity: 1; transform: scale(1.05); filter: blur(0px); }
-            100% { 
-                opacity: 0.4; /* ご要望の40%透過 */
-                transform: scale(1); 
-                filter: blur(2px); 
-            }
+            100% { opacity: 0.4; transform: scale(1); filter: blur(2px); }
         }
-
         .hero-content-fade {
-            position: relative;
-            z-index: 10;
-            opacity: 0;
-            /* 絵が変化し始めてから浮かび上がる */
+            position: relative; z-index: 10; opacity: 0;
             animation: contentReveal 2s ease-out 2s forwards;
         }
-
         @keyframes contentReveal {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -49,7 +33,6 @@
         .section-title::after {
             content: ""; display: block; width: 60px; height: 4px; background: var(--brand-orange); margin: 15px auto; border-radius: 2px;
         }
-
         .company-table th { width: 30%; background-color: #f8fafc; color: var(--brand-blue); border-right: 1px solid #edf2f7; }
         @media (max-width: 640px) {
             .company-table th, .company-table td { display: block; width: 100%; border-right: none; }
@@ -64,25 +47,24 @@
             <div class="flex items-center gap-3">
                 <img src="images/logo.png" alt="広島電気興業 ロゴ" class="h-10 md:h-12 w-auto">
                 <div class="flex flex-col">
-                    <span class="text-[10px] text-blue-900 font-bold tracking-[0.2em] leading-none mb-1">SINCE 1957 広島</span>
+                    <span class="text-[10px] text-blue-900 font-bold tracking-[0.2em] leading-none mb-1 uppercase">Since 1957 Hiroshima</span>
                     <span class="text-lg md:text-xl font-black leading-none tracking-tighter" style="color: var(--brand-blue);">
                         広島電気興業<span class="text-sm font-bold ml-0.5">株式会社</span>
                     </span>
                 </div>
             </div>
-
-            <nav class="hidden lg:flex items-center space-x-8 text-sm font-bold" style="color: var(--brand-blue);">
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-bold" style="color: var(--brand-blue);">
+                <a href="#vision" class="hover:text-orange-500 transition">当社の想い・強み</a>
                 <a href="#b2b" class="hover:text-orange-500 transition">ビルオーナー様へ</a>
                 <a href="#b2c" class="hover:text-orange-500 transition">個人のお客様へ</a>
                 <a href="#company" class="hover:text-orange-500 transition">会社概要</a>
-                <a href="#contact" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition shadow-md">無料相談・見積もり</a>
+                <a href="#contact" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition shadow-md">無料相談・見積もり</a>
             </nav>
         </div>
     </header>
 
     <section class="relative h-screen flex items-center justify-center overflow-hidden bg-white">
-        <img src="images/office_art.png" alt="広島電気興業 水彩画" class="watercolor-base">
-        
+        <img src="images/office_art.png" class="watercolor-base">
         <div class="hero-content-fade text-center px-6">
             <div class="inline-block bg-blue-900 text-white text-xs px-3 py-1 rounded-full mb-6 tracking-widest font-bold shadow-lg">一級建築士・一級電気施工管理技士 在籍</div>
             <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6 text-blue-950">
@@ -93,55 +75,96 @@
                 ビル管理から太陽光の修繕まで。歴史ある誠実さと、最新の技術で応えます。
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#b2b" class="group relative px-10 py-5 bg-blue-900 text-white rounded-xl overflow-hidden shadow-2xl transition-all hover:-translate-y-1 text-center">
-                    <span class="relative z-10 font-bold text-lg px-4">ビル設備点検（法人）</span>
-                    <div class="absolute inset-0 bg-blue-800 translate-y-full group-hover:translate-y-0 transition-transform"></div>
-                </a>
-                <a href="#b2c" class="group relative px-10 py-5 bg-orange-500 text-white rounded-xl overflow-hidden shadow-2xl transition-all hover:-translate-y-1 text-center">
-                    <span class="relative z-10 font-bold text-lg text-center px-4">太陽光メンテナンス（個人）</span>
-                    <div class="absolute inset-0 bg-orange-600 translate-y-full group-hover:translate-y-0 transition-transform"></div>
-                </a>
+                <a href="#b2b" class="px-10 py-5 bg-blue-900 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition">ビル設備点検（法人）</a>
+                <a href="#b2c" class="px-10 py-5 bg-orange-500 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition">太陽光メンテナンス（個人）</a>
             </div>
         </div>
     </section>
 
-    <section id="b2b" class="py-24 bg-gray-50 border-t border-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-blue-900 section-title">ビルオーナー・事業者様へ</h3>
-                <p class="mt-4 text-gray-600 font-medium font-bold">資産価値を最大化する、攻めの「電気設備点検」</p>
+    <section id="vision" class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="mb-24">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl font-bold text-blue-900 section-title">当社の想い</h3>
+                    <p class="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">Our Vision</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 space-y-8">
+                        <div class="space-y-4 text-gray-700 leading-loose">
+                            <p>昨今、国内のインフラにおいて年間10,000件に及ぶ道路陥没、それに伴う停電・上下水不通など、その脆弱性が問題となっております。</p>
+                            <p>また、私たちの生活を支えている様々な<strong class="text-blue-900">*宅内インフラ</strong>においても、老朽化に伴う早急な復旧、メンテナンス等対応が求められ、施工需要は確実に増え続けております。</p>
+                        </div>
+                        <div class="bg-blue-50 p-8 rounded-2xl border-l-8 border-blue-900 shadow-sm">
+                            <p class="text-gray-700 leading-loose">高齢化に伴い有資格者、作業員が減少していく最中、私共は、<br>
+                            <span class="text-blue-900 font-bold text-xl block my-2">”未来を担う技術者の育成”</span>
+                            <span class="text-blue-900 font-bold text-xl block mb-2">"そこにある暮らしを支えていく”</span>
+                            ことを命題とし、社会・地域への貢献と共に、関わる人々の幸福を追求していくことを重要な行動規範として取り組んでおります。</p>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
+                        <img src="images/foto1.png" alt="現場写真1" class="rounded-2xl shadow-lg w-full h-64 object-cover transform hover:scale-105 transition duration-500">
+                        <img src="images/foto2.png" alt="現場写真2" class="rounded-2xl shadow-lg w-full h-64 object-cover mt-8 transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 mt-12 italic text-center">*宅内インフラ　とは、私共の造語であり、私たちの生活を支える身近にあるインフラ全般を指しております。</p>
             </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1">
-                    <h4 class="text-2xl font-bold mb-6 text-blue-900 leading-snug">電気のトラブルは、<br>早期発見でコストを最小化できる。</h4>
-                    <p class="text-gray-600 mb-8 leading-relaxed">ビルの寿命を左右するのは電気設備の管理状態です。当社は「作って終わり」ではなく、管理コスト削減も含めた戦略的なパートナーシップを築きます。</p>
-                    
-                    <div class="grid gap-4">
-                        <div class="flex items-center bg-white p-5 rounded-xl shadow-sm border-l-8 border-blue-900">
-                            <div class="w-1/3 font-bold text-blue-900 uppercase text-xs">Monthly</div>
-                            <div class="w-2/3"><span class="text-xl font-black">15,000</span>円〜 <span class="text-xs text-gray-400 font-normal">/ 異常測定込</span></div>
+
+            <hr class="border-gray-100 my-24">
+
+            <div>
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl font-bold text-blue-900 section-title">当社の強み</h3>
+                    <p class="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">Our Strength</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="images/foto3.png" alt="技術写真3" class="rounded-2xl shadow-xl w-full h-80 object-cover transform -rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="images/foto4.png" alt="技術写真4" class="rounded-2xl shadow-xl w-full h-80 object-cover mt-12 transform rotate-2 hover:rotate-0 transition duration-500">
+                    </div>
+                    <div class="space-y-8">
+                        <div class="space-y-6 text-gray-700 leading-loose">
+                            <p>創業より半世紀、建築工事組下にて電気設備工事に特化し、主として高圧受電設備・内装 外装電気設備工事を施工してまいりました。</p>
+                            <p class="italic p-6 bg-gray-50 rounded-xl border border-gray-100">複雑に絡み合う*宅内インフラの脆弱性の解消には電気設備工事の分野のみでの対応に限界を感じ、2010年より<span class="font-bold border-b-2 border-orange-400 text-gray-900">一般建設工事業・管設備工事業</span>も事業品目に加えました。</p>
+                        </div>
+                        <div class="bg-white shadow-2xl p-8 rounded-3xl border border-blue-50">
+                            <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-3">
+                                <span class="bg-orange-500 text-white p-2 rounded-lg">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </span>
+                                太陽光発電への確かな技術
+                            </h4>
+                            <p class="text-gray-700">現在では太陽光発電設備工事（高圧受電規模）も<span class="text-blue-900 font-bold text-lg underline decoration-orange-400 decoration-4 underline-offset-4">年間10件程度</span>施工しております。</p>
+                        </div>
+                        <div class="bg-blue-900 p-8 rounded-3xl text-white shadow-xl">
+                            <p class="font-bold text-xl mb-4 italic leading-relaxed text-orange-400">築30年以上の改修工事は、<br class="hidden md:block">私共にお任せください。</p>
+                            <p class="text-sm opacity-90 leading-relaxed">ビル・工場・施設・中小集合住宅など、各種設備に不具合が生じているあらゆる「*宅内インフラ」の改修に対応いたします。</p>
                         </div>
                     </div>
                 </div>
-                <div class="order-1 lg:order-2">
-                    <div class="bg-blue-900 rounded-3xl p-10 text-white shadow-2xl relative overflow-hidden">
-                        <div class="absolute -right-10 -top-10 bg-white/10 w-40 h-40 rounded-full blur-3xl"></div>
-                        <h5 class="text-xl font-bold mb-8 flex items-center">
-                            <span class="bg-orange-500 w-2 h-8 mr-4 rounded-full"></span>
-                            選ばれる理由
-                        </h5>
-                        <ul class="space-y-6">
-                            <li class="flex gap-4">
-                                <span class="text-orange-400 font-black text-3xl opacity-50">01</span>
-                                <div><strong>迅速な緊急対応：</strong> 広島市内を拠点とする強み。</div>
-                            </li>
-                            <li class="flex gap-4">
-                                <span class="text-orange-400 font-black text-3xl opacity-50">02</span>
-                                <div><strong>一級の技術力：</strong> 1級施工管理技士が劣化を徹底診断。</div>
-                            </li>
-                        </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="b2b" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-blue-900 section-title text-center">ビルオーナー・事業者様へ</h3>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-blue-900 leading-snug">資産価値を最大化する、<br>攻めの「電気設備点検」</h4>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-sm">電気のトラブルは、早期発見でコストを最小化。当社は管理コスト削減も含めた戦略的なパートナーシップを築きます。</p>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border-l-8 border-blue-900 flex justify-between items-center">
+                        <span class="font-bold text-blue-900">月額点検目安</span>
+                        <span class="text-xl font-black">15,000円〜</span>
                     </div>
+                </div>
+                <div class="bg-blue-900 rounded-3xl p-10 text-white shadow-xl">
+                    <h5 class="text-xl font-bold mb-6 italic underline decoration-orange-500 underline-offset-8">選ばれる理由</h5>
+                    <ul class="space-y-4 text-sm">
+                        <li><strong>● 迅速な緊急対応：</strong> 広島市内を拠点とする機動力。</li>
+                        <li><strong>● 一級の技術力：</strong> 1級施工管理技士が劣化を徹底診断。</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -151,68 +174,60 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h3 class="text-3xl font-bold text-orange-600 section-title">個人のお客様へ</h3>
-                <p class="mt-4 text-gray-600 font-bold">太陽光設備の「主治医」として、発電能力を守ります</p>
             </div>
-
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="bg-orange-50 p-10 rounded-3xl border border-orange-100 relative shadow-inner">
-                    <div class="absolute -top-6 left-10 bg-gray-900 text-white px-6 py-2 font-bold rounded-lg shadow-lg">セカンドオピニオン歓迎</div>
-                    <h4 class="text-2xl font-bold mb-6 text-gray-900 underline decoration-orange-500 underline-offset-8">設置業者が倒産してお困りではありませんか？</h4>
-                    <p class="text-gray-600 leading-relaxed mb-8">「どこに相談すればいいか分からない」そんな不安を私たちが解消します。一級建築士が屋根とシステムを丸ごとチェック。</p>
-                    <div class="grid sm:grid-cols-2 gap-4 text-center">
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-orange-500">
-                            <p class="text-xs text-orange-600 font-bold mb-2">パネル清掃・点検</p>
-                            <p class="text-xl font-black">20,000円〜</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-orange-500">
-                            <p class="text-xs text-orange-600 font-bold mb-2">パワコン周辺修繕</p>
-                            <p class="text-xl font-black">5,500円〜</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-2xl font-bold mb-4 underline decoration-orange-200 decoration-4 underline-offset-4">「もったいない」を「利益」に戻す。</h4>
-                    <p class="text-gray-600 leading-relaxed mb-6 font-medium">太陽光パネルの汚れやシステム異常は売電収入に直結します。定期メンテナンスで、投資価値を最大限に引き出しましょう。</p>
-                    <ul class="space-y-4 font-bold text-gray-700">
-                        <li class="flex items-center text-orange-600"><span class="mr-2">▶</span> パネル破損・鳥害の確認</li>
-                        <li class="flex items-center text-orange-600"><span class="mr-2">▶</span> パワーコンディショナの稼動チェック</li>
-                    </ul>
+            <div class="max-w-4xl mx-auto bg-orange-50 p-10 rounded-3xl border border-orange-100 shadow-inner">
+                <h4 class="text-2xl font-bold mb-6 text-gray-900">設置業者が倒産してお困りではありませんか？</h4>
+                <p class="text-gray-600 mb-8">太陽光設備の「主治医」として、他社設置品でも一級建築士が屋根とシステムを診断します。</p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-orange-500 text-center font-bold">パネル清掃・点検：20,000円〜</div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-orange-500 text-center font-bold">パワコン周辺修繕：5,500円〜</div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="company" class="py-24 bg-gray-50 border-t border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-blue-900 section-title uppercase tracking-widest">Company</h3>
-                <p class="text-xs text-gray-400 mt-2 font-bold tracking-widest">会社概要</p>
-            </div>
-            
-            <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h3 class="text-3xl font-bold text-blue-900 section-title uppercase tracking-widest mb-16">Company</h3>
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 mb-16 text-left">
                 <table class="w-full text-left border-collapse company-table">
                     <tbody>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8">会社名</th><td class="py-5 px-8 font-bold text-lg">広島電気興業株式会社</td></tr>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8">設立</th><td class="py-5 px-8 font-medium">1957年12月</td></tr>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8">資本金</th><td class="py-5 px-8">23,000,000円</td></tr>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8">代表者</th><td class="py-5 px-8 font-medium">代表取締役　勝部 信之</td></tr>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8">従業員数</th><td class="py-5 px-8 font-medium text-blue-800">15名（2025年5月時点）</td></tr>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8">所在地</th><td class="py-5 px-8 text-sm">
+                        <tr class="border-b"><th class="py-5 px-8">会社名</th><td class="py-5 px-8 font-bold text-lg">広島電気興業株式会社</td></tr>
+                        <tr class="border-b"><th class="py-5 px-8">設立</th><td class="py-5 px-8 font-medium">1957年12月</td></tr>
+                        <tr class="border-b"><th class="py-5 px-8">資本金</th><td class="py-5 px-8">23,000,000円</td></tr>
+                        <tr class="border-b"><th class="py-5 px-8">代表者</th><td class="py-5 px-8 font-medium text-blue-900">代表取締役　勝部 信之</td></tr>
+                        <tr class="border-b"><th class="py-5 px-8">従業員数</th><td class="py-5 px-8">15名（2025年5月時点）</td></tr>
+                        <tr class="border-b"><th class="py-5 px-8">所在地</th><td class="py-5 px-8 text-sm">
                             〒730-0824 広島県広島市中区吉島新町２丁目３４－８<br>
                             電話 082-249-8623（代表） / FAX 082-249-8617
                         </td></tr>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8 text-sm md:text-base">建設業許可</th><td class="py-5 px-8 font-medium">広島県知事　許可(特-4)第 12951号</td></tr>
-                        <tr class="border-b border-gray-100 bg-orange-50/30"><th class="py-5 px-8 text-orange-800">保有技術資格</th><td class="py-5 px-8 text-sm leading-relaxed font-bold text-orange-900 italic">
+                        <tr class="border-b"><th class="py-5 px-8">建設業許可</th><td class="py-5 px-8">広島県知事　許可(特-4)第 12951号</td></tr>
+                        <tr class="border-b bg-orange-50/20"><th class="py-5 px-8 text-orange-900 font-bold">保有資格</th><td class="py-5 px-8 text-sm leading-relaxed font-bold">
                             1級電気工事施工管理技士 / 1級管工事施工管理技士 / 一級建築士<br>
                             一種電気工事士 / 二種電気工事士
                         </td></tr>
-                        <tr class="border-b border-gray-100"><th class="py-5 px-8">取引銀行</th><td class="py-5 px-8 text-sm">もみじ銀行 / 広島県信用組合 / 広島銀行</td></tr>
-                        <tr><th class="py-5 px-8">事業内容</th><td class="py-5 px-8 text-sm leading-relaxed">
-                            電気設備工事 / 空調・給排水設備工事<br>
-                            建設・電気設備リニューアル工事 / 再生エネルギー関連工事
-                        </td></tr>
+                        <tr><th class="py-5 px-8">取引銀行</th><td class="py-5 px-8 text-sm">もみじ銀行 / 広島県信用組合 / 広島銀行</td></tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div id="access" class="max-w-5xl mx-auto">
+                <h4 class="text-xl font-bold text-blue-900 mb-8 flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    アクセス
+                </h4>
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative group">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.473528205798!2d132.44673397637847!3d34.36508960139947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355a6379a97046b3%3A0x8143526bc39f1b3b!2z5bqD5bO25paw55S677yS5LiB55uu77yT77yU4I趣77yY!5e0!3m2!1sja!2sjp!4v1710398000000!5m2!1sja!2sjp" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="absolute bottom-4 right-4">
+                        <a href="https://maps.app.goo.gl/ChIJs0ZwqnmjWjUROxufw2tSQ4E" target="_blank" class="bg-white text-blue-900 px-6 py-3 rounded-full font-bold shadow-xl hover:bg-blue-900 hover:text-white transition flex items-center gap-2">
+                            Googleマップで大きく見る
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -220,8 +235,7 @@
     <section id="contact" class="py-24 bg-blue-950 text-white">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <h3 class="text-4xl font-bold mb-4 tracking-tighter">お問い合わせ</h3>
-            <p class="text-blue-200 mb-12">現地調査・お見積もりは無料です。一級の技術者が誠意を持って伺います。</p>
-            
+            <p class="text-blue-200 mb-12 italic font-medium">現地調査・お見積もりは無料です。一級の技術者が誠意を持って伺います。</p>
             <form class="space-y-6 text-gray-900 text-left">
                 <div class="grid md:grid-cols-2 gap-6">
                     <input type="text" placeholder="お名前 / 会社名" class="w-full p-4 rounded-lg outline-none focus:ring-4 focus:ring-orange-500 transition-all shadow-inner" required>
@@ -244,10 +258,10 @@
         </div>
     </section>
 
-    <footer class="py-12 bg-white border-t">
+    <footer class="py-12 bg-white border-t border-gray-100">
         <div class="container mx-auto px-6 text-center">
-            <p class="font-bold text-blue-900 tracking-[0.3em] uppercase">広島電気興業株式会社</p>
-            <p class="text-gray-400 text-[10px] mt-4 uppercase tracking-[0.3em] font-bold">&copy; 2026 HIROSHIMA DENKI KOGYO CO., LTD. ALL RIGHTS RESERVED.</p>
+            <p class="font-bold text-blue-900 tracking-[0.3em] uppercase mb-4">広島電気興業株式会社</p>
+            <p class="text-gray-400 text-[10px] uppercase tracking-[0.3em] font-bold">&copy; 2026 HIROSHIMA DENKI KOGYO CO., LTD. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
