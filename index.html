@@ -5,50 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>広島電気興業株式会社 | 広島の街と太陽を守る電気のスペシャリスト</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root { --brand-blue: #003366; --brand-orange: #f59e0b; }
-        body { font-family: "Hiragino Sans", "Meiryo", sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        
-        /* ヒーローアニメーションの設定 */
-        @keyframes fadeToBackground {
-            0% { opacity: 1; transform: scale(1.05); filter: blur(0px); }
-            100% { opacity: 0.2; transform: scale(1); filter: blur(2px); }
-        }
+<style>
+    /* --- スタイル修正 --- */
+    .watercolor-container {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background-color: white; /* 読み込み中の背景 */
+    }
 
-        .watercolor-layer {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            /* 1秒待機(delay)して3秒で変化(duration) */
-            animation: fadeToBackground 3s ease-in-out 1s forwards;
-        }
+    .watercolor-layer {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1; /* 初期状態は100% */
+        transform: scale(1.05);
+        transition: opacity 3s ease-in-out 1s, transform 3s ease-in-out 1s, filter 3s ease-in-out 1s;
+    }
 
-        /* テキストが浮かび上がるアニメーション */
-        @keyframes contentReveal {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+    /* 読み込み完了後に付与するクラス */
+    .is-loaded .watercolor-layer {
+        opacity: 0.2; /* 指定の20%へ */
+        transform: scale(1);
+        filter: blur(2px);
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            opacity: 0;
-            animation: contentReveal 2s ease-out 2s forwards;
-        }
+    /* テキストの浮上 */
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 2s ease-out 2s, transform 2s ease-out 2s;
+    }
 
-        .section-title::after {
-            content: ""; display: block; width: 60px; height: 4px; background: var(--brand-orange); margin: 15px auto; border-radius: 2px;
-        }
-
-        .company-table th { width: 30%; background-color: #f8fafc; color: #003366; }
-        @media (max-width: 640px) {
-            .company-table th, .company-table td { display: block; width: 100%; border-right: none; }
-            .company-table th { border-bottom: none; padding-bottom: 5px; }
-        }
-    </style>
+    .is-loaded .hero-content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 </head>
 <body class="text-gray-800 bg-white">
 
@@ -68,9 +63,41 @@
     </header>
 
     <section class="relative h-screen flex items-center justify-center overflow-hidden bg-white">
-        <img src="images/office-art.png" alt="広島電気興業 水彩画" class="watercolor-layer">
+        <style>
+            /* ヒーロー専用の追加スタイル */
+            .watercolor-base {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 0;
+                /* アニメーション：1秒待って3秒かけて透過 */
+                animation: watercolorFade 3s ease-in-out 1s forwards;
+            }
+
+            @keyframes watercolorFade {
+                0% { opacity: 1; transform: scale(1.05); filter: blur(0px); }
+                100% { opacity: 0.2; transform: scale(1); filter: blur(2px); }
+            }
+
+            .hero-content-fade {
+                position: relative;
+                z-index: 10;
+                opacity: 0;
+                /* 絵が消え始める頃に下からふわっと出す */
+                animation: contentReveal 2s ease-out 2s forwards;
+            }
+
+            @keyframes contentReveal {
+                0% { opacity: 0; transform: translateY(20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+
+        <img src="images/office_art.png" alt="広島電気興業 水彩画" class="watercolor-base">
         
-        <div class="hero-content text-center px-6">
+        <div class="hero-content-fade text-center px-6">
             <div class="inline-block bg-blue-900 text-white text-xs px-3 py-1 rounded-full mb-6 tracking-widest font-bold">一級建築士・一級電気施工管理技士 在籍</div>
             <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6 text-blue-950">
                 この街の灯りと、<br>あなたの「創エネ」を<br class="md:hidden">技術で繋ぐ。
@@ -80,12 +107,12 @@
                 ビル管理から太陽光の修繕まで。歴史ある誠実さと、最新の技術で応えます。
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#b2b" class="group relative px-10 py-5 bg-blue-900 text-white rounded-xl overflow-hidden shadow-2xl transition-all hover:-translate-y-1">
-                    <span class="relative z-10 font-bold text-lg">ビル設備点検（法人）</span>
+                <a href="#b2b" class="group relative px-10 py-5 bg-blue-900 text-white rounded-xl overflow-hidden shadow-2xl transition-all hover:-translate-y-1 text-center">
+                    <span class="relative z-10 font-bold text-lg px-4">ビル設備点検（法人）</span>
                     <div class="absolute inset-0 bg-blue-800 translate-y-full group-hover:translate-y-0 transition-transform"></div>
                 </a>
-                <a href="#b2c" class="group relative px-10 py-5 bg-orange-500 text-white rounded-xl overflow-hidden shadow-2xl transition-all hover:-translate-y-1">
-                    <span class="relative z-10 font-bold text-lg text-center">太陽光メンテナンス（個人）</span>
+                <a href="#b2c" class="group relative px-10 py-5 bg-orange-500 text-white rounded-xl overflow-hidden shadow-2xl transition-all hover:-translate-y-1 text-center">
+                    <span class="relative z-10 font-bold text-lg px-4 text-nowrap">太陽光メンテナンス（個人）</span>
                     <div class="absolute inset-0 bg-orange-600 translate-y-full group-hover:translate-y-0 transition-transform"></div>
                 </a>
             </div>
