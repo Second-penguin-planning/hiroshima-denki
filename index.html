@@ -30,6 +30,21 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        /* モバイルメニュー用アニメーション */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* ハンバーガーアイコンのアニメーション */
+        .menu-btn-line { transition: all 0.3s; }
+        .open .line1 { transform: translateY(8px) rotate(45deg); }
+        .open .line2 { opacity: 0; }
+        .open .line3 { transform: translateY(-8px) rotate(-45deg); }
+
         .section-title::after {
             content: ""; display: block; width: 60px; height: 4px; background: var(--brand-orange); margin: 15px auto; border-radius: 2px;
         }
@@ -53,6 +68,7 @@
                     </span>
                 </div>
             </div>
+
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-bold" style="color: var(--brand-blue);">
                 <a href="#vision" class="hover:text-orange-500 transition">当社の想い・強み</a>
                 <a href="#b2b" class="hover:text-orange-500 transition">ビルオーナー様へ</a>
@@ -60,7 +76,21 @@
                 <a href="#company" class="hover:text-orange-500 transition">会社概要</a>
                 <a href="#contact" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition shadow-md">無料相談・見積もり</a>
             </nav>
+
+            <button id="menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 z-[60] relative">
+                <span class="menu-btn-line line1 w-6 h-0.5 bg-blue-900 mb-1.5"></span>
+                <span class="menu-btn-line line2 w-6 h-0.5 bg-blue-900 mb-1.5"></span>
+                <span class="menu-btn-line line3 w-6 h-0.5 bg-blue-900"></span>
+            </button>
         </div>
+
+        <nav id="mobile-menu" class="fixed inset-0 bg-blue-950 text-white z-50 flex flex-col items-center justify-center space-y-8 text-xl font-bold lg:hidden">
+            <a href="#vision" class="mobile-link">当社の想い・強み</a>
+            <a href="#b2b" class="mobile-link">ビルオーナー様へ</a>
+            <a href="#b2c" class="mobile-link">個人のお客様へ</a>
+            <a href="#company" class="mobile-link">会社概要</a>
+            <a href="#contact" class="bg-orange-500 px-8 py-3 rounded-full mobile-link">無料相談・見積もり</a>
+        </nav>
     </header>
 
     <section class="relative h-screen flex items-center justify-center overflow-hidden bg-white">
@@ -76,7 +106,7 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <a href="#b2b" class="px-10 py-5 bg-blue-900 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition">ビル設備点検（法人）</a>
-                <a href="#b2c" class="px-10 py-5 bg-orange-500 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition">太陽光メンテナンス（個人）</a>
+                <a href="#b2c" class="px-10 py-5 bg-orange-500 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition text-center">太陽光メンテナンス（個人）</a>
             </div>
         </div>
     </section>
@@ -175,9 +205,9 @@
             <div class="text-center mb-16">
                 <h3 class="text-3xl font-bold text-orange-600 section-title">個人のお客様へ</h3>
             </div>
-            <div class="max-w-4xl mx-auto bg-orange-50 p-10 rounded-3xl border border-orange-100 shadow-inner">
-                <h4 class="text-2xl font-bold mb-6 text-gray-900">設置業者が倒産してお困りではありませんか？</h4>
-                <p class="text-gray-600 mb-8">太陽光設備の「主治医」として、他社設置品でも一級建築士が屋根とシステムを診断します。</p>
+            <div class="max-w-4xl mx-auto bg-orange-50 p-10 rounded-3xl border border-orange-100 shadow-inner text-center md:text-left">
+                <h4 class="text-2xl font-bold mb-6 text-gray-900 leading-tight">設置業者が倒産してお困りではありませんか？</h4>
+                <p class="text-gray-600 mb-8 font-medium">太陽光設備の「主治医」として、他社設置品でも一級建築士が屋根とシステムを診断します。</p>
                 <div class="grid sm:grid-cols-2 gap-4">
                     <div class="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-orange-500 text-center font-bold">パネル清掃・点検：20,000円〜</div>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-orange-500 text-center font-bold">パワコン周辺修繕：5,500円〜</div>
@@ -196,17 +226,14 @@
                         <tr class="border-b"><th class="py-5 px-8">設立</th><td class="py-5 px-8 font-medium">1957年12月</td></tr>
                         <tr class="border-b"><th class="py-5 px-8">資本金</th><td class="py-5 px-8">23,000,000円</td></tr>
                         <tr class="border-b"><th class="py-5 px-8">代表者</th><td class="py-5 px-8 font-medium text-blue-900">代表取締役　勝部 信之</td></tr>
-                        <tr class="border-b"><th class="py-5 px-8">従業員数</th><td class="py-5 px-8">15名（2025年5月時点）</td></tr>
                         <tr class="border-b"><th class="py-5 px-8">所在地</th><td class="py-5 px-8 text-sm">
                             〒730-0824 広島県広島市中区吉島新町２丁目３４－８<br>
                             電話 082-249-8623（代表） / FAX 082-249-8617
                         </td></tr>
-                        <tr class="border-b"><th class="py-5 px-8">建設業許可</th><td class="py-5 px-8">広島県知事　許可(特-4)第 12951号</td></tr>
                         <tr class="border-b bg-orange-50/20"><th class="py-5 px-8 text-orange-900 font-bold">保有資格</th><td class="py-5 px-8 text-sm leading-relaxed font-bold">
                             1級電気工事施工管理技士 / 1級管工事施工管理技士 / 一級建築士<br>
                             一種電気工事士 / 二種電気工事士
                         </td></tr>
-                        <tr><th class="py-5 px-8">取引銀行</th><td class="py-5 px-8 text-sm">もみじ銀行 / 広島県信用組合 / 広島銀行</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -216,17 +243,8 @@
                     <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
                     アクセス
                 </h4>
-                <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative group">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.473528205798!2d132.44673397637847!3d34.36508960139947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355a6379a97046b3%3A0x8143526bc39f1b3b!2z5bqD5bO25paw55S677yS5LiB55uu77yT77yU4I趣77yY!5e0!3m2!1sja!2sjp!4v1710398000000!5m2!1sja!2sjp" 
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                    <div class="absolute bottom-4 right-4">
-                        <a href="https://maps.app.goo.gl/ChIJs0ZwqnmjWjUROxufw2tSQ4E" target="_blank" class="bg-white text-blue-900 px-6 py-3 rounded-full font-bold shadow-xl hover:bg-blue-900 hover:text-white transition flex items-center gap-2">
-                            Googleマップで大きく見る
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                    </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.0763321590483!2d132.44199997637847!3d34.37397790130985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355a23799a7046b3%3A0x8143526bc39f1b3b!2z5bqD5bO26Zu75rCX6IiI5qWt5qCq5byP5Lya56S-!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -234,36 +252,48 @@
 
     <section id="contact" class="py-24 bg-blue-950 text-white">
         <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h3 class="text-4xl font-bold mb-4 tracking-tighter">お問い合わせ</h3>
+            <h3 class="text-4xl font-bold mb-4">お問い合わせ</h3>
             <p class="text-blue-200 mb-12 italic font-medium">現地調査・お見積もりは無料です。一級の技術者が誠意を持って伺います。</p>
             <form class="space-y-6 text-gray-900 text-left">
                 <div class="grid md:grid-cols-2 gap-6">
                     <input type="text" placeholder="お名前 / 会社名" class="w-full p-4 rounded-lg outline-none focus:ring-4 focus:ring-orange-500 transition-all shadow-inner" required>
                     <input type="email" placeholder="メールアドレス" class="w-full p-4 rounded-lg outline-none focus:ring-4 focus:ring-orange-500 transition-all shadow-inner" required>
                 </div>
-                <select class="w-full p-4 rounded-lg outline-none bg-white font-medium shadow-inner" required>
-                    <option value="">相談内容を選択</option>
-                    <option value="b2b">ビル設備点検・管理（法人）</option>
-                    <option value="solar">太陽光パネル点検・修繕（個人）</option>
-                    <option value="quote">その他 見積もり・相談</option>
-                </select>
                 <textarea placeholder="ご相談内容の詳細" class="w-full p-4 rounded-lg h-40 outline-none focus:ring-4 focus:ring-orange-500 transition-all shadow-inner" required></textarea>
                 <div class="text-center mt-10">
-                    <button type="submit" class="px-20 py-5 bg-orange-500 text-white font-black text-2xl rounded-full hover:bg-orange-600 transition shadow-2xl transform hover:-translate-y-1">
-                        無料で相談・見積もりを依頼する
-                    </button>
-                    <p class="mt-4 text-xs text-blue-300 tracking-[0.2em] uppercase">Expertise you can trust since 1957</p>
+                    <button type="submit" class="px-20 py-5 bg-orange-500 text-white font-black text-xl md:text-2xl rounded-full hover:bg-orange-600 transition shadow-2xl">無料で相談・見積もりを依頼する</button>
                 </div>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 bg-white border-t border-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <p class="font-bold text-blue-900 tracking-[0.3em] uppercase mb-4">広島電気興業株式会社</p>
-            <p class="text-gray-400 text-[10px] uppercase tracking-[0.3em] font-bold">&copy; 2026 HIROSHIMA DENKI KOGYO CO., LTD. ALL RIGHTS RESERVED.</p>
-        </div>
+    <footer class="py-12 bg-white border-t border-gray-100 text-center">
+        <p class="font-bold text-blue-900 tracking-[0.3em] uppercase mb-4">広島電気興業株式会社</p>
+        <p class="text-gray-400 text-[10px] tracking-[0.3em] font-bold">© 2026 HIROSHIMA DENKI KOGYO CO., LTD.</p>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // 開閉トグル
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            // メニュー開いている間はスクロール禁止
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        // リンクをクリックしたら閉じる
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
 
 </body>
 </html>
