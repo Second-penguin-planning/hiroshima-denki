@@ -10,7 +10,11 @@
             --brand-blue: #002244; 
             --brand-orange: #f59e0b; 
         }
-        body { font-family: "Hiragino Sans", "Meiryo", sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        body {
+    font-family: "Hiragino Sans", "Meiryo", sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
         
         /* ヒーローアニメーション */
         .watercolor-base {
@@ -98,18 +102,64 @@
         <div class="hero-content-fade text-center px-6">
             <div class="inline-block bg-blue-900 text-white text-xs px-3 py-1 rounded-full mb-6 tracking-widest font-bold shadow-lg">一級建築士・一級電気施工管理技士 在籍</div>
             <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6 text-blue-950">
-                この街の灯りと、<br>あなたの「創エネ」を<br class="md:hidden">技術で繋ぐ。
-            </h2>
-            <p class="text-base md:text-lg text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                1957年の創業より、広島のインフラを支えてきました。<br>
-                ビル管理から太陽光の修繕まで。歴史ある誠実さと、最新の技術で応えます。
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#b2b" class="px-10 py-5 bg-blue-900 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition">ビル設備点検（法人）</a>
-                <a href="#b2c" class="px-10 py-5 bg-orange-500 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition text-center">太陽光メンテナンス（個人）</a>
-            </div>
+    「創る」から「賢く活かす」へ。<br>
+    中四国のエネルギーを、<br class="md:hidden">蓄電池でリデザインする。
+</h2>
+
+<p class="text-base md:text-lg text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+    広島電気興業は、太陽光発電建設の実績を基盤に、<br>
+    蓄電池の企画・調達・施工・保守を「一気通貫」で提供します。
+</p>
+
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+    <a href="#target" class="px-10 py-5 bg-blue-900 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition">
+        法人のお客様へ
+    </a>
+    <a href="#target" class="px-10 py-5 bg-orange-500 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition text-center">
+        個人のお客様へ
+    </a>
+<a href="#contact" class="px-10 py-5 bg-green-600 text-white rounded-xl shadow-2xl font-bold text-lg hover:-translate-y-1 transition">
+    今すぐ相談する
+</a>
+</div>
         </div>
     </section>
+
+<section id="target" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-5xl text-center">
+        <h3 class="text-3xl font-bold text-blue-900 mb-12">お客様別のご案内</h3>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <a href="#b2b" class="bg-white p-10 rounded-3xl shadow-xl hover:-translate-y-2 transition border-t-8 border-blue-900">
+                <h4 class="text-xl font-bold text-blue-900 mb-4">法人のお客様へ</h4>
+                <p class="text-gray-600 text-sm">電気代削減・出力制御対策・BCP対策</p>
+            </a>
+
+            <a href="#b2c" class="bg-white p-10 rounded-3xl shadow-xl hover:-translate-y-2 transition border-t-8 border-orange-500">
+                <h4 class="text-xl font-bold text-orange-500 mb-4">個人のお客様へ</h4>
+                <p class="text-gray-600 text-sm">卒FIT・V2H・災害への備え</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-white text-center">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="text-3xl font-bold text-blue-900 mb-10">なぜ今、蓄電池なのか？</h3>
+
+        <p class="mb-10 text-gray-600">中国・四国エリアの皆様、こんなお悩みはありませんか？</p>
+
+        <div class="space-y-4 text-left max-w-2xl mx-auto">
+            <div class="bg-gray-50 p-5 rounded-xl">電気代が高騰し続けている</div>
+            <div class="bg-gray-50 p-5 rounded-xl">出力制御で電気が無駄になっている</div>
+            <div class="bg-gray-50 p-5 rounded-xl">停電対策を強化したい</div>
+        </div>
+
+        <div class="mt-12 bg-blue-900 text-white p-8 rounded-2xl text-xl font-bold">
+            蓄電池の導入で、これらの課題はすべて解決可能です。
+        </div>
+    </div>
+</section>
 
     <section id="vision" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
@@ -169,11 +219,45 @@
                             <p class="font-bold text-xl mb-4 italic leading-relaxed text-orange-400">築30年以上の改修工事は、<br class="hidden md:block">私共にお任せください。</p>
                             <p class="text-sm opacity-90 leading-relaxed">ビル・工場・施設・中小集合住宅など、各種設備に不具合が生じているあらゆる「*宅内インフラ」の改修に対応いたします。</p>
                         </div>
+<div class="bg-orange-50 p-8 rounded-2xl border-l-8 border-orange-500 shadow-sm">
+    <h4 class="font-bold text-orange-500 mb-3">蓄電池事業への想い</h4>
+    <p class="text-gray-700 text-sm leading-relaxed">
+        私たちは太陽光発電の施工で培った経験を活かし、
+        「創る」だけでなく「活かす」エネルギー活用へ進化します。
+        地域の電力課題を解決するパートナーとして伴走します。
+    </p>
+</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+<section class="py-24 bg-white">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <h3 class="text-3xl font-bold text-center text-blue-900 mb-12">最新情報</h3>
+
+        <div class="space-y-4 text-sm">
+            <div class="border-b pb-3">2026年度 蓄電池補助金まとめ</div>
+            <div class="border-b pb-3">DR対応蓄電池とは？</div>
+            <div class="border-b pb-3">法人向け導入事例</div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <h3 class="text-3xl font-bold text-center text-blue-900 mb-16">一気通貫サービス</h3>
+
+<div class="grid md:grid-cols-5 gap-6 text-center text-sm">
+    <div>①エネルギー診断<br><span class="text-xs text-gray-500">最適容量を算出</span></div>
+    <div>②補助金申請<br><span class="text-xs text-gray-500">申請を完全代行</span></div>
+    <div>③機器調達<br><span class="text-xs text-gray-500">適正価格で提供</span></div>
+    <div>④施工<br><span class="text-xs text-gray-500">自社責任施工</span></div>
+    <div>⑤保守対応<br><span class="text-xs text-gray-500">24時間対応</span></div>
+</div>
+    </div>
+</section>
 
     <section id="b2b" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
@@ -251,20 +335,36 @@
     </section>
 
     <section id="contact" class="py-24 bg-blue-950 text-white">
+<div class="grid md:grid-cols-3 gap-6 mb-10 text-sm">
+    <div class="bg-white text-blue-900 p-5 rounded-xl">法人：電気代削減シミュレーション</div>
+    <div class="bg-white text-blue-900 p-5 rounded-xl">個人：蓄電池ガイド請求</div>
+    <div class="bg-white text-blue-900 p-5 rounded-xl">電話相談も受付中</div>
+</div>
         <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h3 class="text-4xl font-bold mb-4">お問い合わせ</h3>
-            <p class="text-blue-200 mb-12 italic font-medium">現地調査・お見積もりは無料です。一級の技術者が誠意を持って伺います。</p>
-            <form class="space-y-6 text-gray-900 text-left">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="お名前 / 会社名" class="w-full p-4 rounded-lg outline-none focus:ring-4 focus:ring-orange-500 transition-all shadow-inner" required>
-                    <input type="email" placeholder="メールアドレス" class="w-full p-4 rounded-lg outline-none focus:ring-4 focus:ring-orange-500 transition-all shadow-inner" required>
-                </div>
-                <textarea placeholder="ご相談内容の詳細" class="w-full p-4 rounded-lg h-40 outline-none focus:ring-4 focus:ring-orange-500 transition-all shadow-inner" required></textarea>
-                <div class="text-center mt-10">
-                    <button type="submit" class="px-20 py-5 bg-orange-500 text-white font-black text-xl md:text-2xl rounded-full hover:bg-orange-600 transition shadow-2xl">無料で相談・見積もりを依頼する</button>
-                </div>
-            </form>
+    <h3 class="text-4xl font-bold mb-4">お問い合わせ</h3>
+    <p class="text-blue-200 mb-12 italic font-medium">
+        現地調査・お見積もりは無料です。一級の技術者が誠意を持って伺います。
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10 text-sm">
+        <div class="bg-white text-blue-900 p-5 rounded-xl">法人：電気代削減シミュレーション</div>
+        <div class="bg-white text-blue-900 p-5 rounded-xl">個人：蓄電池ガイド請求</div>
+        <div class="bg-white text-blue-900 p-5 rounded-xl">電話相談も受付中</div>
+    </div>
+
+    <form class="space-y-6 text-gray-900 text-left max-w-3xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+            <input type="text" placeholder="お名前 / 会社名" class="w-full p-4 rounded-lg outline-none focus:ring-4 focus:ring-orange-500 shadow-inner" required>
+            <input type="email" placeholder="メールアドレス" class="w-full p-4 rounded-lg outline-none focus:ring-4 focus:ring-orange-500 shadow-inner" required>
         </div>
+        <textarea placeholder="ご相談内容の詳細" class="w-full p-4 rounded-lg h-40 outline-none focus:ring-4 focus:ring-orange-500 shadow-inner" required></textarea>
+        <div class="text-center mt-10">
+            <button type="submit" class="px-20 py-5 bg-orange-500 text-white font-black text-xl rounded-full hover:bg-orange-600 shadow-2xl">
+                無料で相談・見積もりを依頼する
+            </button>
+        </div>
+    </form>
+</div>
     </section>
 
     <footer class="py-12 bg-white border-t border-gray-100 text-center">
