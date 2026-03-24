@@ -28,55 +28,10 @@
             border-color: var(--brand-orange) !important;
             box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
         }
-        .fixed-cta-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(0, 34, 68, 0.97);
-            backdrop-filter: blur(10px);
-            border-top: 2px solid var(--brand-orange);
-        }
-        @media (min-width: 1024px) {
-            .fixed-cta-bar { display: none; }
-        }
-        .counter-number {
-            font-variant-numeric: tabular-nums;
-        }
-        .bcp-compare-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .bcp-compare-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-        }
-        .voice-card {
-            transition: transform 0.3s;
-        }
-        .voice-card:hover {
-            transform: translateY(-3px);
-        }
-        .merit-icon {
-            width: 64px; height: 64px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 16px;
-            font-size: 28px;
-        }
-        /* ハンバーガーメニュー */
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-        .mobile-menu.open {
-            max-height: 500px;
-        }
     </style>
 </head>
 <body class="text-gray-800 bg-white">
 
-    <!-- ===== HEADER ===== -->
     <header class="fixed w-full z-50 bg-white/95 border-b border-gray-100 shadow-sm">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -89,51 +44,16 @@
                 </div>
             </div>
 
-            <!-- 電話番号（PC表示） -->
-            <div class="hidden lg:flex items-center gap-2 text-blue-900">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                <a href="tel:082-243-5821" class="font-black text-lg tracking-wide">082-243-5821</a>
-                <span class="text-xs text-gray-500 ml-1">平日 8:30-17:30</span>
-            </div>
-
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-bold" style="color: var(--brand-blue);">
-                <a href="#battery-about" class="hover:text-orange-500 transition">蓄電池とは</a>
-                <a href="#b2b-features" class="hover:text-orange-500 transition">導入メリット</a>
-                <a href="#bcp" class="hover:text-orange-500 transition">災害対策</a>
-                <a href="#voice" class="hover:text-orange-500 transition">お客様の声</a>
+                <a href="#b2b-features" class="hover:text-orange-500 transition">蓄電池とは</a>
                 <a href="#service-flow" class="hover:text-orange-500 transition">導入の流れ</a>
                 <a href="#vision" class="hover:text-orange-500 transition">当社の強み</a>
                 <a href="#company" class="hover:text-orange-500 transition">会社概要</a>
                 <a href="#contact" class="bg-orange-500 text-white px-6 py-2.5 rounded-lg hover:bg-orange-600 transition shadow-md">無料シミュレーション</a>
             </nav>
-
-            <!-- ハンバーガーボタン -->
-            <button id="menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="メニューを開く">
-                <span class="block w-6 h-0.5 bg-blue-900"></span>
-                <span class="block w-6 h-0.5 bg-blue-900"></span>
-                <span class="block w-6 h-0.5 bg-blue-900"></span>
-            </button>
-        </div>
-        <!-- モバイルメニュー -->
-        <div id="mobile-menu" class="mobile-menu lg:hidden bg-white border-t border-gray-100">
-            <nav class="flex flex-col px-6 py-4 space-y-3 text-sm font-bold" style="color: var(--brand-blue);">
-                <a href="#battery-about" class="py-2 border-b border-gray-100" onclick="closeMobileMenu()">蓄電池とは</a>
-                <a href="#b2b-features" class="py-2 border-b border-gray-100" onclick="closeMobileMenu()">導入メリット</a>
-                <a href="#bcp" class="py-2 border-b border-gray-100" onclick="closeMobileMenu()">災害対策（BCP）</a>
-                <a href="#voice" class="py-2 border-b border-gray-100" onclick="closeMobileMenu()">お客様の声</a>
-                <a href="#service-flow" class="py-2 border-b border-gray-100" onclick="closeMobileMenu()">導入の流れ</a>
-                <a href="#vision" class="py-2 border-b border-gray-100" onclick="closeMobileMenu()">当社の強み</a>
-                <a href="#company" class="py-2 border-b border-gray-100" onclick="closeMobileMenu()">会社概要</a>
-                <a href="tel:082-243-5821" class="py-2 border-b border-gray-100 flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    082-243-5821
-                </a>
-                <a href="#contact" class="bg-orange-500 text-white px-6 py-3 rounded-lg text-center" onclick="closeMobileMenu()">無料シミュレーション</a>
-            </nav>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
     <section class="relative min-h-screen flex items-center hero-gradient pt-20">
         <div class="container mx-auto px-6 text-white">
             <div class="max-w-3xl">
@@ -141,78 +61,44 @@
                     広島県内の法人・工場・ビルオーナー様へ
                 </div>
                 <h1 class="text-4xl md:text-6xl font-black leading-tight mb-8">
-                    電気代高騰を<br class="md:hidden">「蓄電池」で止める。<br>
-                    <span class="text-orange-400">災害対策と経費削減</span>を<br class="hidden md:block">同時実現。
+                    夜間電力を「蓄電池」でお得にする。<br>
+                    <span class="text-orange-400">BCP対策と経費削減</span>を<br class="hidden md:block">同時実現。
                 </h1>
                 <p class="text-lg md:text-xl mb-10 text-blue-50 leading-relaxed font-medium">
                     創業69年・広島県内施工実績多数。一級電気施工管理技士が、<br class="hidden md:block">
-                    御社の電力使用状況を分析し、最適な産業用蓄電池をご提案。
+                    御社の電力使用状況を分析し、最適な蓄電池トータルプランをご提案。
                 </p>
-
-                <!-- 実績数字バー -->
-                <div class="flex flex-wrap gap-6 mb-10 text-center">
-                    <div class="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20">
-                        <div class="text-3xl font-black text-orange-400 counter-number">69<span class="text-lg">年</span></div>
-                        <div class="text-xs text-blue-200 mt-1">創業からの信頼</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20">
-                        <div class="text-3xl font-black text-orange-400 counter-number">年10<span class="text-lg">件超</span></div>
-                        <div class="text-xs text-blue-200 mt-1">高圧太陽光施工</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 border border-white/20">
-                        <div class="text-3xl font-black text-orange-400 counter-number">最大40<span class="text-lg">%</span></div>
-                        <div class="text-xs text-blue-200 mt-1">電気代削減実績</div>
-                    </div>
-                </div>
-
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#contact" class="px-12 py-5 bg-orange-500 text-white rounded-xl shadow-2xl font-bold text-xl hover:bg-orange-600 transition text-center">
                         60秒かんたん無料シミュレーション
                     </a>
-                    <a href="tel:082-243-5821" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-xl font-bold text-xl hover:bg-white/20 transition text-center flex items-center justify-center gap-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        電話で相談する
+                    <a href="#b2b-features" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-xl font-bold text-xl hover:bg-white/20 transition text-center">
+                        導入メリットを見る
                     </a>
-                </div>
-                <div class="mt-8 flex flex-wrap gap-6 items-center text-sm opacity-80">
-                    <div class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        補助金申請サポート
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        設計から施工まで一貫対応
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        まずは電気代診断だけでもOK
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 経営課題セクション ===== -->
     <section class="py-20 bg-gray-50 border-b border-gray-200">
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-2xl md:text-3xl font-bold text-center text-blue-950 mb-4">このような経営課題を解決します</h2>
-            <p class="text-center text-gray-500 mb-12">電気に関するお悩み、すべてご相談ください</p>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     </div>
-                    <h3 class="font-bold text-lg mb-4">高騰する電気代を抑えたい</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">ピークカット制御により、電力の基本料金を決定する「最大デマンド値」を抑制。固定費を戦略的に削減します。</p>
+                    <h3 class="font-bold text-lg mb-4">夜間電力を賢く利用したい</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">安い夜間電力を蓄電し、昼間に使用することで電気代を大幅に削減。コストダウンによる競争力強化につながります。</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
                     <h3 class="font-bold text-lg mb-4">災害時の事業継続が不安</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">停電時でも製造ラインやサーバー、照明などの重要設備を稼働。地域インフラとしての信頼を守ります。</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                     </div>
@@ -220,168 +106,17 @@
                     <p class="text-gray-600 text-sm leading-relaxed">太陽光発電と組み合わせ、クリーンエネルギーの自家消費率を最大化。企業価値の向上に直結します。</p>
                 </div>
             </div>
-            <!-- 課題セクション後CTA -->
-            <div class="text-center mt-12">
-                <a href="#contact" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-lg">
-                    まずは無料で電気代を診断する →
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- ===== 蓄電池とは？（図解セクション）===== -->
-    <section id="battery-about" class="py-24 bg-white">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-950 section-title">そもそも蓄電池とは？</h2>
-                <p class="text-gray-500 mt-4">太陽光で作った電気を「貯めて」「使う」仕組みです</p>
-            </div>
-
-            <!-- 図解：昼・夜・停電 -->
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-gradient-to-b from-yellow-50 to-white p-8 rounded-3xl border border-yellow-200 text-center">
-                    <div class="text-5xl mb-4">☀️</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">昼間（発電中）</h3>
-                    <div class="text-left space-y-3 text-sm text-gray-700">
-                        <div class="flex items-start gap-2">
-                            <span class="text-orange-500 font-bold mt-0.5">→</span>
-                            <span>太陽光パネルで電気を作る</span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-orange-500 font-bold mt-0.5">→</span>
-                            <span>作った電気をまず事業所・工場で使用</span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-green-500 font-bold mt-0.5">→</span>
-                            <span><strong>余った電気を蓄電池に貯める</strong></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-b from-indigo-50 to-white p-8 rounded-3xl border border-indigo-200 text-center">
-                    <div class="text-5xl mb-4">🌙</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">夜間・曇天時</h3>
-                    <div class="text-left space-y-3 text-sm text-gray-700">
-                        <div class="flex items-start gap-2">
-                            <span class="text-orange-500 font-bold mt-0.5">→</span>
-                            <span>太陽光では発電できない時間帯</span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-green-500 font-bold mt-0.5">→</span>
-                            <span><strong>蓄電池に貯めた電気を使う</strong></span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-blue-500 font-bold mt-0.5">→</span>
-                            <span>電力会社からの購入量を大幅カット</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-b from-red-50 to-white p-8 rounded-3xl border border-red-200 text-center">
-                    <div class="text-5xl mb-4">⚡</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">停電時</h3>
-                    <div class="text-left space-y-3 text-sm text-gray-700">
-                        <div class="flex items-start gap-2">
-                            <span class="text-red-500 font-bold mt-0.5">→</span>
-                            <span>災害・事故で電力供給が停止</span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-green-500 font-bold mt-0.5">→</span>
-                            <span><strong>蓄電池が自動で自立運転に切替</strong></span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-green-500 font-bold mt-0.5">→</span>
-                            <span><strong>重要設備の電力を確保し事業継続</strong></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 蓄電池容量の目安 -->
-            <div class="bg-blue-50 rounded-3xl p-8 md:p-12 border border-blue-100">
-                <h3 class="text-xl font-bold text-blue-900 mb-6 text-center">蓄電池の容量で「何ができるか」の目安</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-2xl">
-                        <h4 class="font-bold text-blue-900 mb-4 text-lg">🏭 産業用 100kWh の場合</h4>
-                        <p class="text-sm text-gray-500 mb-3">停電時に稼働できる設備（約8〜12時間）</p>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> 事務所の照明・空調</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> サーバー・通信機器</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> 冷蔵・冷凍設備</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> セキュリティシステム</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> 最低限の製造ライン</li>
-                        </ul>
-                        <p class="text-xs text-gray-400 mt-3">※太陽光と併用でさらに長時間稼働可能</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl">
-                        <h4 class="font-bold text-blue-900 mb-4 text-lg">🏠 家庭用 9.8kWh の場合</h4>
-                        <p class="text-sm text-gray-500 mb-3">停電時に同時に使えるもの（約12〜24時間）</p>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> 冷蔵庫（24時間稼働）</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> 照明 3部屋分</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> テレビ</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> スマホ充電 5台分</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✅</span> Wi-Fiルーター</li>
-                        </ul>
-                        <p class="text-xs text-gray-400 mt-3">※太陽光と併用でさらに長時間OK</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 比較表 -->
-            <div class="mt-12">
-                <h3 class="text-xl font-bold text-blue-900 mb-6 text-center">太陽光だけ vs 太陽光＋蓄電池</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full border-collapse bg-white rounded-2xl overflow-hidden shadow-sm">
-                        <thead>
-                            <tr class="bg-blue-900 text-white">
-                                <th class="py-4 px-6 text-left text-sm">比較項目</th>
-                                <th class="py-4 px-6 text-center text-sm">太陽光のみ</th>
-                                <th class="py-4 px-6 text-center text-sm bg-orange-500">太陽光＋蓄電池</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm">
-                            <tr class="border-b border-gray-100">
-                                <td class="py-4 px-6 font-bold">昼間の電気代</td>
-                                <td class="py-4 px-6 text-center">◎ 大幅削減</td>
-                                <td class="py-4 px-6 text-center bg-orange-50 font-bold">◎ 大幅削減</td>
-                            </tr>
-                            <tr class="border-b border-gray-100">
-                                <td class="py-4 px-6 font-bold">夜間の電気代</td>
-                                <td class="py-4 px-6 text-center text-gray-400">△ 買電が必要</td>
-                                <td class="py-4 px-6 text-center bg-orange-50 font-bold text-orange-600">◎ 蓄電池から使用</td>
-                            </tr>
-                            <tr class="border-b border-gray-100">
-                                <td class="py-4 px-6 font-bold">停電時</td>
-                                <td class="py-4 px-6 text-center text-gray-400">△ 昼間のみ一部</td>
-                                <td class="py-4 px-6 text-center bg-orange-50 font-bold text-orange-600">◎ 夜間もOK</td>
-                            </tr>
-                            <tr class="border-b border-gray-100">
-                                <td class="py-4 px-6 font-bold">デマンド（基本料金）</td>
-                                <td class="py-4 px-6 text-center text-gray-400">△ 制御困難</td>
-                                <td class="py-4 px-6 text-center bg-orange-50 font-bold text-orange-600">◎ ピークカット可能</td>
-                            </tr>
-                            <tr>
-                                <td class="py-4 px-6 font-bold">年間削減額（目安）</td>
-                                <td class="py-4 px-6 text-center">約10〜30万円</td>
-                                <td class="py-4 px-6 text-center bg-orange-50 font-bold text-orange-600">約30〜100万円以上</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="text-xs text-gray-400 mt-3 text-center">※削減額は設備規模・電力使用状況により異なります。正確な数値は無料シミュレーションで算出します。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 法人用蓄電池 導入の3大メリット ===== -->
-    <section id="b2b-features" class="py-24 bg-gray-50">
+    <section id="b2b-features" class="py-24">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-950 section-title">蓄電池導入の3大メリット</h2>
-                <p class="text-gray-500 mt-4">蓄電池は「いざという時」だけでなく「毎日」利益を生む設備です</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-950 section-title">法人用蓄電池 導入の3大メリット</h2>
+                <p class="text-gray-500 mt-4">蓄電池は「いざという時」だけでなく「毎日」稼ぐ設備です</p>
             </div>
 
             <div class="space-y-24">
-                <!-- メリット01 -->
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2">
                         <img src="images/peakcut_graph.jpg" alt="ピークカット図解" class="rounded-3xl shadow-2xl w-full">
@@ -390,405 +125,84 @@
                         <span class="text-orange-500 font-black text-6xl opacity-20 block mb-2">01</span>
                         <h3 class="text-2xl font-bold text-blue-900 mb-6">基本料金の削減（ピークカット）</h3>
                         <p class="text-gray-700 leading-loose mb-6">
-                            法人の電気料金は、過去1年間の最大需要電力（デマンド値）で決まります。蓄電池に貯めた電気を、消費電力が増える時間帯に放電することで、デマンド値を抑制。<strong>年間数十万円から数百万円の基本料金削減</strong>が可能です。
+                            法人の電気料金は、過去1年間の最大需要電力（デマンド値）で決まります。夜間の安い電力を蓄電池に蓄え、昼間のピークに使用することで、デマンド値を抑制し、<strong>年間数十万円から数百万円の基本料金削減</strong>が可能です。
                         </p>
                         <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-900">
-                            <p class="text-sm font-bold text-blue-900">💰 削減効果の一例</p>
-                            <p class="text-gray-600 text-sm mt-1">契約電力200kWの工場で、ピークを15%削減した場合 → <strong class="text-orange-600">年間約40万円の削減</strong>（概算）</p>
+                            <p class="text-sm font-bold text-blue-900">削減効果の一例</p>
+                            <p class="text-gray-600 text-sm italic">※契約電力200kWの工場で、夜間電力を使用しつつピークを15%削減した場合、年間約40万円の削減（概算）</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- メリット02 -->
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12">
                     <div class="md:w-1/2">
                         <img src="images/bcp_operation.jpg" alt="BCP対策" class="rounded-3xl shadow-2xl w-full">
                     </div>
                     <div class="md:w-1/2">
                         <span class="text-orange-500 font-black text-6xl opacity-20 block mb-2">02</span>
-                        <h3 class="text-2xl font-bold text-blue-900 mb-6">災害時でも事業を止めない（BCP）</h3>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">企業の信頼を守るBCP対策</h3>
                         <p class="text-gray-700 leading-loose mb-6">
-                            災害時、電気が止まることは事業の停止、さらには信用の喪失に直結します。産業用蓄電池を導入することで、<strong>停電後わずか数秒で自立運転に切り替わり</strong>、必要な電力を確保。地域住民への避難場所提供など、地域貢献にも活用できます。
+                            災害時、電気が止まることは事業の停止、さらには信用の喪失に直結します。産業用蓄電池を導入することで、停電後わずか数秒で自立運転に切り替わり、必要な電力を確保。地域住民への避難場所提供など、地域貢献にも活用できます。
                         </p>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3 text-sm font-bold text-gray-700">
-                                <span class="text-green-500 text-lg">✔</span> 重要設備の24時間稼働
+                                <span class="text-green-500">✔</span> 重要設備の24時間稼働
                             </li>
                             <li class="flex items-center gap-3 text-sm font-bold text-gray-700">
-                                <span class="text-green-500 text-lg">✔</span> 通信機器・サーバーの保護
-                            </li>
-                            <li class="flex items-center gap-3 text-sm font-bold text-gray-700">
-                                <span class="text-green-500 text-lg">✔</span> 従業員・顧客の安全確保
+                                <span class="text-green-500">✔</span> 通信機器・サーバーの保護
                             </li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- メリット03 -->
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2">
-                        <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-12 flex items-center justify-center shadow-2xl">
-                            <div class="text-center">
-                                <div class="text-6xl mb-4">🌱</div>
-                                <div class="text-2xl font-bold text-green-700">CO₂排出量削減</div>
-                                <div class="text-4xl font-black text-green-600 mt-2">最大70<span class="text-xl">%</span></div>
-                                <p class="text-sm text-gray-500 mt-2">太陽光＋蓄電池併用時</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2">
-                        <span class="text-orange-500 font-black text-6xl opacity-20 block mb-2">03</span>
-                        <h3 class="text-2xl font-bold text-blue-900 mb-6">脱炭素経営で企業価値向上</h3>
-                        <p class="text-gray-700 leading-loose mb-6">
-                            太陽光発電と蓄電池を組み合わせることで、クリーンエネルギーの自家消費率を最大化。RE100やSBTなどの国際基準への対応はもちろん、<strong>取引先からの環境評価向上</strong>や、サプライチェーン全体でのCO₂削減に貢献します。
-                        </p>
-                        <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-600">
-                            <p class="text-sm font-bold text-green-800">📊 企業にとっての実利</p>
-                            <p class="text-gray-600 text-sm mt-1">環境対応が調達条件となる取引先が増加中。早期導入が競合優位性を生みます。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- メリット後CTA -->
-            <div class="text-center mt-20">
-                <a href="#contact" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-lg">
-                    御社の削減額をシミュレーションする（無料）→
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== BCP詳細セクション ===== -->
-    <section id="bcp" class="py-24 bg-white">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-950 section-title">災害時でも事業を止めない電力対策</h2>
-                <p class="text-gray-500 mt-4">いざという時の備え（BCP＝事業継続計画）を太陽光＋蓄電池で実現</p>
-            </div>
-
-            <!-- BCPの解説 -->
-            <div class="bg-blue-50 rounded-3xl p-8 md:p-12 mb-16 border border-blue-100">
-                <h3 class="text-xl font-bold text-blue-900 mb-4">BCP（事業継続計画）とは？</h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    地震・台風・豪雨などの災害が起きた時に、<strong>「どうやって事業を続けるか」をあらかじめ決めておく計画</strong>のこと。その中でも最も重要な要素のひとつが<span class="text-orange-600 font-bold">「電力の確保」</span>です。
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                    電気がなければ、製造ライン・通信・冷蔵設備・セキュリティ…あらゆるものが止まります。蓄電池は、発電機と違い<strong>燃料不要・即時起動・騒音なし</strong>で非常用電源として機能します。
-                </p>
-            </div>
-
-            <!-- 広島の災害リスク -->
-            <div class="bg-red-50 rounded-3xl p-8 md:p-12 mb-16 border border-red-100">
-                <h3 class="text-xl font-bold text-red-800 mb-6 flex items-center gap-2">
-                    <span class="text-2xl">⚠️</span> 広島は災害リスクが高い地域です
-                </h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-2xl">
-                        <div class="text-sm font-bold text-red-700 mb-2">2018年</div>
-                        <h4 class="font-bold text-gray-900 mb-2">西日本豪雨</h4>
-                        <p class="text-sm text-gray-600">広島県内で大規模停電が発生。多くの事業所が操業停止に追い込まれました。</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl">
-                        <div class="text-sm font-bold text-red-700 mb-2">2014年</div>
-                        <h4 class="font-bold text-gray-900 mb-2">広島土砂災害</h4>
-                        <p class="text-sm text-gray-600">長期間のライフライン断絶。復旧までに数日〜数週間を要した地域も。</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl">
-                        <div class="text-sm font-bold text-red-700 mb-2">毎年</div>
-                        <h4 class="font-bold text-gray-900 mb-2">台風シーズン</h4>
-                        <p class="text-sm text-gray-600">瀬戸内海沿岸部は台風の影響を受けやすく、毎年停電リスクがあります。</p>
-                    </div>
-                </div>
-                <p class="text-center mt-6 font-bold text-red-800">「うちは大丈夫」ではなく「<span class="text-orange-600">備えがあるから大丈夫</span>」へ。</p>
-            </div>
-
-            <!-- 停電時の比較 -->
-            <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">停電が起きたらどうなる？</h3>
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="bcp-compare-card bg-gray-100 p-8 rounded-3xl border-2 border-gray-200">
-                    <div class="text-center mb-6">
-                        <span class="text-4xl">❌</span>
-                        <h4 class="text-xl font-bold text-gray-600 mt-2">蓄電池なし</h4>
-                    </div>
-                    <ul class="space-y-4 text-sm">
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-500 font-bold text-lg mt-[-2px]">✗</span>
-                            <span><strong>冷蔵・冷凍設備が停止</strong>→ 食品廃棄・医薬品管理不能</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-500 font-bold text-lg mt-[-2px]">✗</span>
-                            <span><strong>レジ・POSが使えない</strong>→ 売上がゼロに</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-500 font-bold text-lg mt-[-2px]">✗</span>
-                            <span><strong>サーバーがダウン</strong>→ データ消失リスク</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-500 font-bold text-lg mt-[-2px]">✗</span>
-                            <span><strong>空調が停止</strong>→ 従業員・顧客の安全に関わる</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-red-500 font-bold text-lg mt-[-2px]">✗</span>
-                            <span><strong>電話・通信が途絶</strong>→ 取引先と連絡が取れない</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bcp-compare-card bg-green-50 p-8 rounded-3xl border-2 border-green-300">
-                    <div class="text-center mb-6">
-                        <span class="text-4xl">✅</span>
-                        <h4 class="text-xl font-bold text-green-700 mt-2">蓄電池あり</h4>
-                    </div>
-                    <ul class="space-y-4 text-sm">
-                        <li class="flex items-start gap-3">
-                            <span class="text-green-500 font-bold text-lg mt-[-2px]">✔</span>
-                            <span><strong>冷蔵・冷凍を維持</strong>→ 食品・医薬品の在庫を守れる</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-green-500 font-bold text-lg mt-[-2px]">✔</span>
-                            <span><strong>営業を継続できる</strong>→ 売上損失を最小化</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-green-500 font-bold text-lg mt-[-2px]">✔</span>
-                            <span><strong>サーバー・データを保護</strong>→ 安全なシャットダウンも可能</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-green-500 font-bold text-lg mt-[-2px]">✔</span>
-                            <span><strong>空調・照明を確保</strong>→ 従業員・顧客の安全を守る</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-green-500 font-bold text-lg mt-[-2px]">✔</span>
-                            <span><strong>通信手段を確保</strong>→ 迅速な状況報告・復旧対応</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 業種別の具体例 -->
-            <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">業種別：停電で起きる被害と蓄電池の効果</h3>
-            <div class="grid md:grid-cols-2 gap-6 mb-16">
-                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                    <h4 class="font-bold text-blue-900 text-lg mb-3 flex items-center gap-2">🏭 工場・製造業</h4>
-                    <p class="text-sm text-red-600 mb-2">被害：生産ライン停止 → 納期遅延 → 取引先の信用失墜</p>
-                    <p class="text-sm text-green-700 font-bold">→ 蓄電池で最低限の設備を稼働し、被害を最小化</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                    <h4 class="font-bold text-blue-900 text-lg mb-3 flex items-center gap-2">🏥 医療・介護施設</h4>
-                    <p class="text-sm text-red-600 mb-2">被害：医療機器の停止 → 患者の生命に関わるリスク</p>
-                    <p class="text-sm text-green-700 font-bold">→ 太陽光＋蓄電池で72時間以上の電力確保が可能</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                    <h4 class="font-bold text-blue-900 text-lg mb-3 flex items-center gap-2">🏪 小売・飲食店</h4>
-                    <p class="text-sm text-red-600 mb-2">被害：冷蔵・冷凍庫の停止 → 在庫廃棄で数十万〜数百万の損失</p>
-                    <p class="text-sm text-green-700 font-bold">→ 蓄電池で冷蔵設備を維持し、在庫を守る</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                    <h4 class="font-bold text-blue-900 text-lg mb-3 flex items-center gap-2">🏢 オフィス・IT企業</h4>
-                    <p class="text-sm text-red-600 mb-2">被害：サーバー停止 → データ消失 → 業務完全ストップ</p>
-                    <p class="text-sm text-green-700 font-bold">→ UPS連携＋蓄電池で安全なシャットダウンまで確保</p>
-                </div>
-            </div>
-
-            <!-- BCP補助金 -->
-            <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-8 md:p-12 border border-orange-200">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="md:w-2/3">
-                        <h3 class="text-xl font-bold text-orange-800 mb-4 flex items-center gap-2">
-                            <span class="text-2xl">💡</span> BCP（災害対策）目的の導入には補助金が使えます
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            国や広島県では、災害対策としての太陽光・蓄電池導入に補助金を交付しています。BCP目的での申請は<strong>採択率も高い傾向</strong>にあります。複雑な申請手続きも当社が代行いたします。
-                        </p>
-                        <p class="text-sm text-gray-500">※補助金の種類・金額は年度や条件により異なります。最新情報はお問い合わせください。</p>
-                    </div>
-                    <div class="md:w-1/3 text-center">
-                        <a href="#contact" class="inline-block bg-orange-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg">
-                            補助金について相談する（無料）
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 選ばれる理由（差別化）===== -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-950 section-title">広島電気興業が選ばれる4つの理由</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition flex gap-6">
-                    <div class="merit-icon bg-blue-100 text-blue-900 shrink-0">🏛️</div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2">創業69年 地域密着の信頼</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">1957年の創業以来、広島の電気インフラを支え続けてきた実績。地元だからこそ迅速に対応できます。</p>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition flex gap-6">
-                    <div class="merit-icon bg-orange-100 text-orange-600 shrink-0">🔧</div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2">設計から施工・保守まで一貫対応</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">下請け任せにしません。自社の一級技術者が責任を持って対応するから、品質が違います。</p>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition flex gap-6">
-                    <div class="merit-icon bg-green-100 text-green-700 shrink-0">📋</div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2">メーカー横断の最適提案</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">特定メーカーに縛られず、国内外の一流メーカーからお客様の用途に合った最適な製品を選定します。</p>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition flex gap-6">
-                    <div class="merit-icon bg-purple-100 text-purple-700 shrink-0">📝</div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2">補助金申請の完全代行</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">国や県の複雑な補助金申請をすべて代行。お客様の手を煩わせることなく、最大限の補助金を確保します。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== お客様の声 ===== -->
-    <section id="voice" class="py-24 bg-white">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-950 section-title">お客様の声・導入事例</h2>
-                <p class="text-gray-500 mt-4">実際に蓄電池を導入された企業様の声をご紹介します</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="voice-card bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold">A</div>
-                        <div>
-                            <p class="font-bold text-sm text-blue-900">広島市安佐南区 A社様</p>
-                            <p class="text-xs text-gray-500">製造業 / 太陽光50kW + 蓄電池100kWh</p>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="text-orange-400">★★★★★</span>
-                    </div>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
-                        「デマンド値が大幅に下がり、<strong>年間の電気代が約80万円削減</strong>できました。停電時の備えにもなり、従業員も安心して働けると好評です。」
-                    </p>
-                    <div class="bg-orange-50 px-4 py-2 rounded-lg inline-block">
-                        <span class="text-sm font-bold text-orange-600">年間削減額：約80万円</span>
-                    </div>
-                </div>
-
-                <div class="voice-card bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold">B</div>
-                        <div>
-                            <p class="font-bold text-sm text-blue-900">広島市中区 B社様</p>
-                            <p class="text-xs text-gray-500">オフィスビル / 太陽光30kW + 蓄電池60kWh</p>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="text-orange-400">★★★★★</span>
-                    </div>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
-                        「補助金の申請から施工まで全部お任せできたのが助かりました。<strong>面倒な書類作成も全て代行</strong>してもらい、想像以上にスムーズでした。」
-                    </p>
-                    <div class="bg-orange-50 px-4 py-2 rounded-lg inline-block">
-                        <span class="text-sm font-bold text-orange-600">補助金で初期費用大幅軽減</span>
-                    </div>
-                </div>
-
-                <div class="voice-card bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold">C</div>
-                        <div>
-                            <p class="font-bold text-sm text-blue-900">廿日市市 C社様</p>
-                            <p class="text-xs text-gray-500">食品加工業 / 太陽光40kW + 蓄電池80kWh</p>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <span class="text-orange-400">★★★★★</span>
-                    </div>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
-                        「西日本豪雨の経験から導入を決意。冷蔵設備の停止が一番怖かったので、<strong>停電時も冷蔵庫が止まらない安心感</strong>は何物にも代えがたいです。」
-                    </p>
-                    <div class="bg-orange-50 px-4 py-2 rounded-lg inline-block">
-                        <span class="text-sm font-bold text-orange-600">BCP対策で取引先の評価UP</span>
-                    </div>
-                </div>
-            </div>
-
-            <p class="text-xs text-gray-400 text-center mt-6">※お客様のプライバシー保護のため、イニシャルで表記しています。内容はご本人の感想です。</p>
-
-            <!-- お客様の声後CTA -->
-            <div class="text-center mt-12">
-                <a href="#contact" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-lg">
-                    同じように削減できるか相談する（無料）→
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 導入の流れ ===== -->
     <section id="service-flow" class="py-24 bg-blue-950 text-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-4 section-title">導入までの5ステップ</h2>
-            <p class="text-center text-blue-200 mb-16">お問い合わせから稼働まで、すべてワンストップでサポートします</p>
+            <h2 class="text-3xl font-bold text-center mb-16 section-title">導入までの5ステップ</h2>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition">
+                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
                     <div class="text-orange-400 font-bold mb-2">STEP 01</div>
-                    <div class="text-3xl mb-3">📞</div>
                     <h4 class="font-bold mb-4">電力分析・診断</h4>
                     <p class="text-xs text-blue-100">過去の電力使用データを基に、最適な蓄電池容量をシミュレーションします。</p>
-                    <div class="mt-3 inline-block bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">無料</div>
                 </div>
-                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition">
+                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
                     <div class="text-orange-400 font-bold mb-2">STEP 02</div>
-                    <div class="text-3xl mb-3">📋</div>
                     <h4 class="font-bold mb-4">補助金申請代行</h4>
                     <p class="text-xs text-blue-100">国や広島県の複雑な補助金申請を、経験豊富なスタッフが完全サポート。</p>
-                    <div class="mt-3 inline-block bg-orange-500/20 text-orange-300 text-xs px-3 py-1 rounded-full">代行無料</div>
                 </div>
-                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition">
+                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
                     <div class="text-orange-400 font-bold mb-2">STEP 03</div>
-                    <div class="text-3xl mb-3">🔍</div>
                     <h4 class="font-bold mb-4">機材調達・設計</h4>
                     <p class="text-xs text-blue-100">国内・海外の一流メーカーから、用途に合わせた最適な機材を選定します。</p>
                 </div>
-                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition">
+                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
                     <div class="text-orange-400 font-bold mb-2">STEP 04</div>
-                    <div class="text-3xl mb-3">🔧</div>
                     <h4 class="font-bold mb-4">自社施工</h4>
                     <p class="text-xs text-blue-100">下請け任せにせず、自社の一級技術者が責任を持って安全に設置工事を行います。</p>
                 </div>
-                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition">
+                <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
                     <div class="text-orange-400 font-bold mb-2">STEP 05</div>
-                    <div class="text-3xl mb-3">🛡️</div>
                     <h4 class="font-bold mb-4">保守・点検</h4>
                     <p class="text-xs text-blue-100">稼働後のトラブルにも迅速に対応。長期的な資産価値を維持します。</p>
                 </div>
             </div>
-            <!-- 導入の流れ後CTA -->
-            <div class="text-center mt-16">
-                <a href="#contact" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-lg">
-                    まずはSTEP1の無料診断から始める →
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- ===== 当社の強み ===== -->
     <section id="vision" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16">
                 <h3 class="text-3xl font-bold text-blue-900 section-title">広島電気興業の強み</h3>
                 <p class="text-orange-500 font-bold mt-2 tracking-widest uppercase text-sm">Since 1957 Hiroshima Quality</p>
             </div>
-
+            
             <div class="grid lg:grid-cols-2 gap-16 items-start">
                 <div class="space-y-8">
                     <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
                         <h4 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-3">
-                            <span class="bg-blue-900 text-white p-2 rounded-lg text-sm">実績</span>
+                            <span class="bg-blue-900 text-white p-2 rounded-lg">実績</span>
                             太陽光発電（高圧）年間10件超の施工
                         </h4>
                         <p class="text-gray-700 leading-loose">
@@ -797,20 +211,11 @@
                     </div>
                     <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
                         <h4 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-3">
-                            <span class="bg-blue-900 text-white p-2 rounded-lg text-sm">資格</span>
+                            <span class="bg-blue-900 text-white p-2 rounded-lg">資格</span>
                             一級建築士・一級電気管理技士在籍
                         </h4>
                         <p class="text-gray-700 leading-loose">
-                            「ただ置くだけ」の工事はしません。建物の構造から電気系統の劣化状況まで、建築と電気のプロが多角的に診断。30年後の資産価値を見据えます。
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
-                        <h4 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-3">
-                            <span class="bg-blue-900 text-white p-2 rounded-lg text-sm">対応</span>
-                            地元・広島だからできる迅速サポート
-                        </h4>
-                        <p class="text-gray-700 leading-loose">
-                            大手メーカー経由だと「電話→本社→現地担当」とたらい回しに。当社なら電話1本で技術者が直接対応。万が一のトラブルも、広島県内なら最短即日で駆けつけます。
+                            「ただ置くだけ」の工事はしません。建物の構造から電気系統の劣化状態まで、建築と電気の専門家が多角的に診断。30年後の資産価値を見据えます。
                         </p>
                     </div>
                 </div>
@@ -822,102 +227,16 @@
         </div>
     </section>
 
-    <!-- ===== よくある質問 ===== -->
-    <section id="faq" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-950 section-title">よくある質問</h2>
-            </div>
-
-            <div class="space-y-4">
-                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
-                    <summary class="p-6 cursor-pointer font-bold text-blue-900 flex justify-between items-center hover:bg-gray-50 transition">
-                        <span>Q. 蓄電池の導入にはどれくらいの費用がかかりますか？</span>
-                        <span class="text-orange-500 text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-sm text-gray-700 leading-relaxed">
-                        設備の規模や選定するメーカーにより異なります。まずは無料シミュレーションで、御社の電力使用状況に合った最適なプランと費用をご提示いたします。補助金を活用することで、初期費用を大幅に抑えることも可能です。
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
-                    <summary class="p-6 cursor-pointer font-bold text-blue-900 flex justify-between items-center hover:bg-gray-50 transition">
-                        <span>Q. 蓄電池の寿命はどれくらいですか？</span>
-                        <span class="text-orange-500 text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-sm text-gray-700 leading-relaxed">
-                        一般的にリチウムイオン蓄電池の寿命は10〜15年程度です。使用環境やメーカーにより異なりますが、当社では長期保証付きの製品を中心にご提案しています。定期的なメンテナンスで、さらに長くご使用いただけます。
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
-                    <summary class="p-6 cursor-pointer font-bold text-blue-900 flex justify-between items-center hover:bg-gray-50 transition">
-                        <span>Q. 既に太陽光を設置していますが、蓄電池だけ追加できますか？</span>
-                        <span class="text-orange-500 text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-sm text-gray-700 leading-relaxed">
-                        はい、可能です。既設の太陽光発電システムとの連携を含めた最適な蓄電池の選定・設計を行います。他社で設置された太陽光でも対応可能ですので、お気軽にご相談ください。
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
-                    <summary class="p-6 cursor-pointer font-bold text-blue-900 flex justify-between items-center hover:bg-gray-50 transition">
-                        <span>Q. 補助金はどのようなものが使えますか？</span>
-                        <span class="text-orange-500 text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-sm text-gray-700 leading-relaxed">
-                        国（経済産業省・環境省等）や広島県・各市町村の補助金が活用できます。BCP目的や脱炭素目的など、導入理由によって適用できる補助金が異なります。最新の補助金情報を踏まえ、最も有利な申請方法をご提案します。申請代行も無料で承ります。
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-2xl border border-gray-200 overflow-hidden group">
-                    <summary class="p-6 cursor-pointer font-bold text-blue-900 flex justify-between items-center hover:bg-gray-50 transition">
-                        <span>Q. 家庭用の蓄電池・太陽光も対応していますか？</span>
-                        <span class="text-orange-500 text-xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-sm text-gray-700 leading-relaxed">
-                        はい、家庭用の蓄電池・太陽光発電システムの設置やメンテナンスも承っております。お気軽にお問い合わせください。
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 個人・住宅用 ===== -->
-    <section id="b2c" class="py-16 bg-white border-t border-b border-gray-100">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-8 md:p-12 border border-orange-200 text-center">
-                <h3 class="text-2xl font-bold text-blue-900 mb-4">個人・住宅用のお客様もご相談ください</h3>
-                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                    家庭用蓄電池・太陽光発電の新規導入、FIT終了後の自家消費切替、<br class="hidden md:block">
-                    既設パネルのメンテナンスなど、住宅用のご相談も承っております。
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="inline-block bg-orange-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg">
-                        家庭用について相談する
-                    </a>
-                    <a href="tel:082-243-5821" class="inline-block bg-white border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition">
-                        📞 082-243-5821
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 会社概要 ===== -->
-    <section id="company" class="py-24 bg-gray-50">
+    <section id="company" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-4xl">
             <h3 class="text-3xl font-bold text-blue-900 section-title text-center mb-16">会社概要</h3>
-            <div class="overflow-hidden border-t border-gray-200 bg-white rounded-2xl shadow-sm">
+            <div class="overflow-hidden border-t border-gray-200">
                 <table class="w-full text-left border-collapse">
                     <tbody>
-                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50 w-1/3 text-sm font-bold text-gray-700">会社名</th><td class="py-5 px-6 font-bold">広島電気興業株式会社</td></tr>
-                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50 text-sm font-bold text-gray-700">代表者</th><td class="py-5 px-6">代表取締役　勝部 信之</td></tr>
-                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50 text-sm font-bold text-gray-700">創業</th><td class="py-5 px-6">1957年（昭和32年）</td></tr>
-                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50 text-sm font-bold text-gray-700">所在地</th><td class="py-5 px-6">〒730-0824 広島県広島市中区吉島新町２丁目３４－８</td></tr>
-                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50 text-sm font-bold text-gray-700">電話番号</th><td class="py-5 px-6"><a href="tel:082-243-5821" class="text-blue-900 font-bold hover:text-orange-500 transition">082-243-5821</a></td></tr>
-                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50 text-sm font-bold text-gray-700">事業内容</th><td class="py-5 px-6 text-sm">産業用蓄電池の設計・施工 / 自家消費型太陽光発電システム / 電気設備工事全般 / 保守・メンテナンス</td></tr>
-                        <tr><th class="py-5 px-6 bg-gray-50 text-sm font-bold text-gray-700">保有資格</th><td class="py-5 px-6 text-sm">
+                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50 w-1/3">会社名</th><td class="py-5 px-6 font-bold">広島電気興業株式会社</td></tr>
+                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50">代表者</th><td class="py-5 px-6">代表取締役　勝部 信之</td></tr>
+                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50">所在地</th><td class="py-5 px-6">〒730-0824 広島県広島市中区吉島新町２丁目３４－８</td></tr>
+                        <tr class="border-b"><th class="py-5 px-6 bg-gray-50">保有資格</th><td class="py-5 px-6 text-sm">
                             1級電気工事施工管理技士 / 1級管工事施工管理技士 / 一級建築士 / 一種・二種電気工事士
                         </td></tr>
                     </tbody>
@@ -926,136 +245,51 @@
         </div>
     </section>
 
-    <!-- ===== お問い合わせ ===== -->
     <section id="contact" class="py-24 bg-blue-900 text-white">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold mb-6">60秒かんたん 無料シミュレーション</h3>
-                <p class="text-blue-100 leading-relaxed">
+                <h3 class="text-4xl font-bold mb-6">無料シミュレーション受付中</h3>
+                <p class="text-blue-100">
                     現在の「電気明細書」を1年分ご用意ください。<br>
-                    蓄電池導入による正確な削減効果を無料でレポートいたします。<br>
-                    <span class="text-orange-300 font-bold">まずは電気代の診断だけでもOKです。お気軽にどうぞ。</span>
+                    蓄電池導入による正確な削減効果を無料でレポートいたします。
                 </p>
-
-                <!-- 電話 -->
-                <div class="mt-8 bg-white/10 backdrop-blur-md rounded-2xl p-6 inline-block border border-white/20">
-                    <p class="text-sm text-blue-200 mb-2">お急ぎの方はお電話で</p>
-                    <a href="tel:082-243-5821" class="text-3xl font-black text-white hover:text-orange-400 transition flex items-center gap-3 justify-center">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        082-243-5821
-                    </a>
-                    <p class="text-xs text-blue-300 mt-1">平日 8:30〜17:30（土日祝休み）</p>
-                </div>
             </div>
 
             <form class="bg-white text-gray-900 p-10 rounded-3xl shadow-2xl">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-sm font-bold mb-2">貴社名 / お名前 <span class="text-red-500">*</span></label>
-                        <input type="text" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none" placeholder="例：株式会社○○ / 山田太郎" required>
+                        <label class="block text-sm font-bold mb-2">貴社名 / お名前</label>
+                        <input type="text" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none" required>
                     </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">お電話番号 <span class="text-red-500">*</span></label>
-                        <input type="tel" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none" placeholder="例：082-000-0000" required>
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-sm font-bold mb-2">メールアドレス</label>
-                        <input type="email" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none" placeholder="例：info@example.com">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">ご住所（市区町村）</label>
-                        <input type="text" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none" placeholder="例：広島市中区">
+                        <input type="email" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none" required>
                     </div>
                 </div>
                 <div class="mb-6">
-                    <label class="block text-sm font-bold mb-2">ご相談内容 <span class="text-red-500">*</span></label>
-                    <select class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none" required>
-                        <option value="">選択してください</option>
+                    <label class="block text-sm font-bold mb-2">ご相談内容</label>
+                    <select class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg outline-none">
                         <option>産業用蓄電池のシミュレーション希望</option>
                         <option>太陽光発電＋蓄電池の導入相談</option>
-                        <option>BCP対策（災害時の電力確保）について</option>
                         <option>補助金について詳しく聞きたい</option>
-                        <option>家庭用蓄電池・太陽光について</option>
-                        <option>既設太陽光のメンテナンス</option>
-                        <option>その他</option>
+                        <option>その他（メンテナンス等）</option>
                     </select>
                 </div>
                 <div class="mb-8">
                     <label class="block text-sm font-bold mb-2">メッセージ詳細</label>
-                    <textarea class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg h-32 outline-none" placeholder="現在のお悩みや、導入を検討されている施設の規模などをご記入ください（任意）"></textarea>
+                    <textarea class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg h-32 outline-none" placeholder="現在のお悩みや、導入を検討されている施設の規模などをご記入ください"></textarea>
                 </div>
                 <button type="submit" class="w-full py-5 bg-orange-500 text-white font-black text-xl rounded-xl hover:bg-orange-600 transition shadow-lg">
-                    この内容で無料シミュレーションを依頼する
+                    この内容で送信する
                 </button>
-                <p class="text-xs text-gray-400 text-center mt-4">※送信後、2営業日以内に担当者よりご連絡いたします。</p>
             </form>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer class="py-12 bg-gray-900 text-center text-white">
-        <p class="font-bold tracking-[0.3em] uppercase mb-2">広島電気興業株式会社</p>
-        <p class="text-gray-400 text-sm mb-2">〒730-0824 広島県広島市中区吉島新町２丁目３４－８</p>
-        <p class="text-gray-400 text-sm mb-6">TEL：<a href="tel:082-243-5821" class="hover:text-orange-400 transition">082-243-5821</a>（平日 8:30〜17:30）</p>
-        <p class="text-gray-600 text-[10px] tracking-[0.3em]">© 2026 HIROSHIMA DENKI KOGYO CO., LTD. ALL RIGHTS RESERVED.</p>
+        <p class="font-bold tracking-[0.3em] uppercase mb-4">広島電気興業株式会社</p>
+        <p class="text-gray-500 text-[10px] tracking-[0.3em]">© 2026 HIROSHIMA DENKI KOGYO CO., LTD. ALL RIGHTS RESERVED.</p>
     </footer>
-
-    <!-- ===== スマホ固定CTAバー ===== -->
-    <div class="fixed-cta-bar py-3 px-4">
-        <div class="flex gap-3 max-w-lg mx-auto">
-            <a href="tel:082-243-5821" class="flex-1 bg-white text-blue-900 py-3 rounded-lg font-bold text-center text-sm flex items-center justify-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                電話する
-            </a>
-            <a href="#contact" class="flex-1 bg-orange-500 text-white py-3 rounded-lg font-bold text-center text-sm">
-                無料シミュレーション
-            </a>
-        </div>
-    </div>
-
-    <!-- ===== JavaScript ===== -->
-    <script>
-        // モバイルメニュー
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('open');
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('open');
-        }
-
-        // スクロール時のヘッダーの影を強調
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('shadow-md');
-            } else {
-                header.classList.remove('shadow-md');
-            }
-        });
-
-        // スムーススクロール（固定ヘッダー分のオフセット）
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
